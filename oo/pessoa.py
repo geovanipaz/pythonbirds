@@ -17,9 +17,12 @@ class Pessoa:
 class Homem(Pessoa):
     pass
 
+class Mutante(Pessoa):
+    olhos = 3
+
 if __name__ == '__main__':
 
-    renzo = Homem(nome='Renzo')
+    renzo = Mutante(nome='Renzo')
     luciano = Pessoa(renzo,nome='Luciano')
 
     print(Pessoa.cumprimentar(luciano))
@@ -37,8 +40,8 @@ if __name__ == '__main__':
     print(renzo.__dict__)
     luciano.olhos = 1
     print(Pessoa.olhos)
-    Pessoa.olhos = 3
     print(luciano.olhos)
     print(Pessoa.olhos)
     print(id(Pessoa.olhos),id(luciano.olhos))
     print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
+    print(renzo.olhos)
